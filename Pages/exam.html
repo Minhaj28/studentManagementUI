@@ -1,11 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>School Management</title>
     <link rel="stylesheet" href="../CSS/styles.css" />
-    <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css" />
+    <link rel="stylesheet" href="../CSS/exam.css" />
+
+    <link
+      rel="stylesheet"
+      href="../font-awesome-4.7.0/css/font-awesome.min.css"
+    />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -19,8 +24,8 @@
       integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
       crossorigin="anonymous"
     />
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
       <div class="lower-header">
         <div class="lower-header-container">
@@ -31,7 +36,7 @@
           </div>
           <div class="nav-menu">
             <ul class="nav-list">
-              <li class="nav-item" style="color: #484949;">
+              <li class="nav-item" style="color: #484949">
                 <a href="user.html">User</a>
               </li>
               <li class="nav-item">
@@ -95,9 +100,67 @@
     </header>
 
     <div class="main">
-        
+      <div class="container">
+        <div class="form-container">
+          <form id="examForm">
+            <div class="form-group">
+              <label for="courseId">Select Course:</label>
+              <select id="courseId" required>
+                <option value="">Select a course</option>
+                <!-- Options will be dynamically populated -->
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="examDate">Exam Date:</label>
+              <input type="date" id="examDate" required />
+            </div>
+            <div class="form-group">
+              <label for="examType">Exam Type:</label>
+              <input type="text" id="examType" required />
+            </div>
+            <button type="submit" id="submitBtn">Create Exam</button>
+          </form>
+        </div>
+
+        <div class="table-container" style="overflow-x: auto">
+          <h2>Exam List</h2>
+          <input type="text" id="searchBar" placeholder="Search exams..." />
+
+          <table id="examTable">
+            <thead>
+              <tr>
+                <th>Exam ID</th>
+                <th>Course Name</th>
+                <th>Exam Date</th>
+                <th>Exam Type</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Exam rows will be dynamically populated -->
+            </tbody>
+          </table>
+          <div id="paginationControls" class="pagination">
+            <button id="prevPage" class="page-btn">Previous</button>
+            <span id="currentPage">1</span> / <span id="totalPages">1</span>
+            <button id="nextPage" class="page-btn">Next</button>
+          </div>
+        </div>
+      </div>
+
+      <div id="deleteModal" class="modal">
+        <div class="modal-content">
+          <span class="close">&times;</span>
+          <p>Are you sure you want to delete this exam?</p>
+          <button id="confirmDeleteBtn">Delete</button>
+          <button id="cancelDeleteBtn">Cancel</button>
+        </div>
+      </div>
+
+
     </div>
 
+    <script src="../JS/exam.js"></script>
 
     <script>
       document.addEventListener("DOMContentLoaded", function () {
@@ -108,7 +171,7 @@
       document
         .querySelector(".menu-icon")
         .addEventListener("click", function () {
-        //   document.querySelector(".upper-header").classList.toggle("active");
+          //   document.querySelector(".upper-header").classList.toggle("active");
           document.querySelector(".menu-container").classList.toggle("active");
         });
     </script>

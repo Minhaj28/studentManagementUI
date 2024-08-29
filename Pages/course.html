@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>School Management</title>
     <link rel="stylesheet" href="../CSS/styles.css" />
+    <link rel="stylesheet" href="../CSS/course.css" />
     <link rel="stylesheet" href="../font-awesome-4.7.0/css/font-awesome.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
@@ -95,8 +96,61 @@
     </header>
 
     <div class="main">
-        
-    </div>
+      <div class="container">
+          <div class="form-container">
+              <form id="courseForm">
+                  <input type="hidden" id="courseID" disabled />
+                  <label for="courseName">Course Name:</label>
+                  <input type="text" id="courseName" required />
+
+                  <label for="description">Description:</label>
+                  <input type="text" id="description" required />
+
+                  <label for="level">Level:</label>
+                  <input type="text" id="level" required />
+
+                  <button type="submit" id="submitBtn">Create Course</button>
+                  <button type="button" id="updateBtn" style="display:none;">Update Course</button>
+              </form>
+          </div>
+
+          <div class="table-container" style="overflow-x:auto;">
+          <h2>Course List</h2>
+              <input type="text" id="searchBar" placeholder="Search courses..." />
+
+              <table id="courseTable">
+                  <thead>
+                      <tr>
+                          <th>ID</th>
+                          <th>Course Name</th>
+                          <th>Description</th>
+                          <th>Level</th>
+                          <th>Actions</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <!-- Course rows will be populated here -->
+                  </tbody>
+              </table>
+              <div id="paginationControls" class="pagination">
+                  <button id="prevPage" class="page-btn">Previous</button>
+                  <span id="currentPage">1</span> / <span id="totalPages">1</span>
+                  <button id="nextPage" class="page-btn">Next</button>
+              </div>
+          </div>
+      </div>
+
+      <div id="deleteModal" class="modal">
+          <div class="modal-content">
+              <span class="close">&times;</span>
+              <p>Are you sure you want to delete this course?</p>
+              <button id="confirmDeleteBtn">Delete</button>
+              <button id="cancelDeleteBtn">Cancel</button>
+          </div>
+      </div>
+  </div>
+
+  <script type="module" src="../JS/course.js"></script>
 
 
     <script>
