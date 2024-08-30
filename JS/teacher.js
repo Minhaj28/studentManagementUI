@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     let teacherToDeleteId = null;
     let currentPage = 1;
-    let teachersPerPage = 10;
+    let teachersPerPage = 5;
     let totalPages = 1;
   
     function fetchTeachers(searchQuery = "", page = 1) {
@@ -182,6 +182,6 @@ document.addEventListener("DOMContentLoaded", function() {
       fetchTeachers(searchBar.value.trim(), currentPage);
     });
   
-    fetchTeachers();
+    fetchTeachers("", currentPage);
   });
   

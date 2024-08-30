@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     let courseToDeleteId = null;
     let currentPage = 1;
-    let coursesPerPage = 10;
+    let coursesPerPage = 5;
     let totalPages = 1;
 
     function fetchCourses(searchQuery = "", page = 1) {
@@ -186,5 +186,5 @@ document.addEventListener("DOMContentLoaded", function() {
         }
     });
 
-    fetchCourses();
+    fetchCourses("", currentPage);
 });

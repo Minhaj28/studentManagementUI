@@ -16,7 +16,6 @@ document.addEventListener("DOMContentLoaded", function() {
     const currentPageDisplay = document.getElementById("currentPage");
     const totalPagesDisplay = document.getElementById("totalPages");
   
-    let studentToDeleteId = null;
     let currentPage = 1;
     let examsPerPage = 10;
     let totalPages = 1;
@@ -31,7 +30,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 courses.forEach(course => {
                     const option = document.createElement("option");
                     option.value = course.courseId;
-                    option.textContent = course.courseName;
+                    option.textContent = course.courseName +" ("+ course.level + ")";
                     courseIdSelect.appendChild(option);
                 });
             });
@@ -154,5 +153,5 @@ document.addEventListener("DOMContentLoaded", function() {
 
     // Initial load
     fetchCourses();
-    fetchExams();
+    fetchExams("", currentPage);
 });

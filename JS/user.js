@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
   
     let userToDeleteId = null;
     let currentPage = 1;
-    let usersPerPage = 10;
+    let usersPerPage = 5;
     let totalPages = 1;
   
     function fetchUsers(searchQuery = "", page = 1) {

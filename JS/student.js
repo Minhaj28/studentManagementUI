@@ -19,7 +19,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   let studentToDeleteId = null;
   let currentPage = 1;
-  let studentsPerPage = 10;
+  let studentsPerPage = 5;
   let totalPages = 1;
 
   // Fetch and display students with pagination
