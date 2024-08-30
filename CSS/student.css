@@ -20,6 +20,7 @@
   
   input[type="text"],
   input[type="email"],
+  select,
   #searchBar {
     width: calc(100% - 20px);
     padding: 8px 10px;
@@ -27,6 +28,10 @@
     border: 1px solid #ccc;
     border-radius: 4px;
     box-sizing: border-box;
+  }
+
+  #level{
+    margin-bottom: 20px;
   }
   
   button {

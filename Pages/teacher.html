@@ -117,7 +117,13 @@
             <input type="text" id="department" required />
     
             <label for="designation">Designation:</label>
-            <input type="text" id="designation" required />
+            <select id="designation" required>
+              <option value="">Select designation</option>
+              <option value="lecturer">lecturer</option>
+              <option value="assistant professor">assistant professor</option>
+              <option value="associate professor">associate professor</option>
+              <option value="professor">professor</option>
+            </select>
     
             <button type="submit" id="submitBtn">Create Teacher</button>
             <button type="button" id="updateBtn" style="display:none;">Update Teacher</button>

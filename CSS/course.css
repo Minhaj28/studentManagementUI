@@ -19,6 +19,7 @@ label {
 }
 
 input[type="text"],
+select,
 #searchBar {
     width: calc(100% - 20px);
     padding: 8px 10px;
@@ -27,6 +28,10 @@ input[type="text"],
     border-radius: 4px;
     box-sizing: border-box;
 }
+
+#level{
+    margin-bottom: 20px;
+  }
 
 button {
     padding: 10px 20px;
